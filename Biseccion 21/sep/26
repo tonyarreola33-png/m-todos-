@@ -1,0 +1,252 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNgMb2MSGnr6c/SkB6/oweq",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/tonyarreola33-png/m-todos-/blob/main/Biseccion%2021/sep/26\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "0poOwXs38er0"
+      },
+      "outputs": [],
+      "source": [
+        "#metodo de biseccion"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from math import *\n",
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt"
+      ],
+      "metadata": {
+        "id": "MMqCQVW68tlj"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def funcion1(x) :\n",
+        "    return np.tan(x)-x"
+      ],
+      "metadata": {
+        "id": "65n3pkT19JgL"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "f=funcion1(0)"
+      ],
+      "metadata": {
+        "id": "kkqDoXHi9dxh"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(f)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UhokcRHk9i0g",
+        "outputId": "463d3e2f-a187-4821-eaad-935c049c8967"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=4\n",
+        "b=4.5"
+      ],
+      "metadata": {
+        "id": "rNMuy1jb9q2-"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a0=a\n",
+        "b0=b"
+      ],
+      "metadata": {
+        "id": "Sm4M2HIv-fX8"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tol=0.000001\n",
+        "nmax=100\n",
+        "error=100\n",
+        "niter=0"
+      ],
+      "metadata": {
+        "id": "1nRp22hg-juf"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "m=a+(b-a) /2"
+      ],
+      "metadata": {
+        "id": "puQsimqI_h9i"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "fa=funcion1(a)\n",
+        "fb=funcion1(b)\n",
+        "fm=funcion1(m)"
+      ],
+      "metadata": {
+        "id": "00zirs11_oSR"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"# iter\\t\\t a \\t\\y f(a) \\t\\t b \\t\\t f(b) \\t\\t f(m) \\t\\y error\")\n",
+        "print(\"{0} \\t\\t {1:6.4f} \\t {2:6.4f} \\t {3:6.4f} \\t {4:6.4f} \\t {5:6.4f} \\t {6:6.4f} \\t {7:6.4f}\".format(niter,a0,fa,b0,fb,m,fm,error))"
+      ],
+      "metadata": {
+        "id": "oZv-PoK9_4Ok",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "0189107d-062c-47ad-9b4d-65a6150cadf5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "# iter\t\t a \t\\y f(a) \t\t b \t\t f(b) \t\t f(m) \t\\y error\n",
+            "0 \t\t 4.0000 \t -2.8422 \t 4.5000 \t 0.1373 \t 4.2500 \t -2.2437 \t 100.0000\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "<>:1: SyntaxWarning: invalid escape sequence '\\y'\n",
+            "<>:1: SyntaxWarning: invalid escape sequence '\\y'\n",
+            "/tmp/ipykernel_1902/3727696838.py:1: SyntaxWarning: invalid escape sequence '\\y'\n",
+            "  print(\"# iter\\t\\t a \\t\\y f(a) \\t\\t b \\t\\t f(b) \\t\\t f(m) \\t\\y error\")\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "while error> tol and niter<nmax:\n",
+        "     m=a+(b-a) /2\n",
+        "     if np.sign(fa)==np.sign(fm):\n",
+        "        a=m\n",
+        "        fa=funcion1(a)\n",
+        "     else:\n",
+        "        b=m\n",
+        "        fb=funcion1(b)\n",
+        "     m=a+(b-a) /2\n",
+        "     fm=funcion1(m)\n",
+        "     error=abs(b-a)\n",
+        "     niter+=1\n",
+        "     print(\"{0} \\t\\t {1:6.6f} \\t {2:6.6f} \\t {3:6.6f} \\t {4:6.6f} \\t {5:6.6f} \\t {6:6.6f} \\t {7:6.6f}\".format(niter,a,fa,b,fb,m,fm,error))\n",
+        "print(\"la raíz de la función dada en el intervalo [{0:6.4f}, {1:6.4f}] es {2:6.7f}\".format(a0,b0,m))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "02k6TK6r6xNc",
+        "outputId": "36153f71-04c1-4447-ac88-2f3e983fc717"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1 \t\t 4.250000 \t -2.243691 \t 4.500000 \t 0.137332 \t 4.375000 \t -1.524388 \t 0.250000\n",
+            "2 \t\t 4.375000 \t -1.524388 \t 4.500000 \t 0.137332 \t 4.437500 \t -0.891762 \t 0.125000\n",
+            "3 \t\t 4.437500 \t -0.891762 \t 4.500000 \t 0.137332 \t 4.468750 \t -0.445853 \t 0.062500\n",
+            "4 \t\t 4.468750 \t -0.445853 \t 4.500000 \t 0.137332 \t 4.484375 \t -0.174948 \t 0.031250\n",
+            "5 \t\t 4.484375 \t -0.174948 \t 4.500000 \t 0.137332 \t 4.492188 \t -0.024531 \t 0.015625\n",
+            "6 \t\t 4.492188 \t -0.024531 \t 4.500000 \t 0.137332 \t 4.496094 \t 0.054892 \t 0.007812\n",
+            "7 \t\t 4.492188 \t -0.024531 \t 4.496094 \t 0.054892 \t 4.494141 \t 0.014814 \t 0.003906\n",
+            "8 \t\t 4.492188 \t -0.024531 \t 4.494141 \t 0.014814 \t 4.493164 \t -0.004949 \t 0.001953\n",
+            "9 \t\t 4.493164 \t -0.004949 \t 4.494141 \t 0.014814 \t 4.493652 \t 0.004910 \t 0.000977\n",
+            "10 \t\t 4.493164 \t -0.004949 \t 4.493652 \t 0.004910 \t 4.493408 \t -0.000025 \t 0.000488\n",
+            "11 \t\t 4.493408 \t -0.000025 \t 4.493652 \t 0.004910 \t 4.493530 \t 0.002441 \t 0.000244\n",
+            "12 \t\t 4.493408 \t -0.000025 \t 4.493530 \t 0.002441 \t 4.493469 \t 0.001207 \t 0.000122\n",
+            "13 \t\t 4.493408 \t -0.000025 \t 4.493469 \t 0.001207 \t 4.493439 \t 0.000591 \t 0.000061\n",
+            "14 \t\t 4.493408 \t -0.000025 \t 4.493439 \t 0.000591 \t 4.493423 \t 0.000283 \t 0.000031\n",
+            "15 \t\t 4.493408 \t -0.000025 \t 4.493423 \t 0.000283 \t 4.493416 \t 0.000129 \t 0.000015\n",
+            "16 \t\t 4.493408 \t -0.000025 \t 4.493416 \t 0.000129 \t 4.493412 \t 0.000052 \t 0.000008\n",
+            "17 \t\t 4.493408 \t -0.000025 \t 4.493412 \t 0.000052 \t 4.493410 \t 0.000013 \t 0.000004\n",
+            "18 \t\t 4.493408 \t -0.000025 \t 4.493410 \t 0.000013 \t 4.493409 \t -0.000006 \t 0.000002\n",
+            "19 \t\t 4.493409 \t -0.000006 \t 4.493410 \t 0.000013 \t 4.493410 \t 0.000004 \t 0.000001\n",
+            "la raíz de la función dada en el intervalo [4.0000, 4.5000] es 4.4934096\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
